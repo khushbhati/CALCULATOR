@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="middle">
+      <form name="calc">
+        <input type="text" id="display" name="display" disabled />
+        <div class="buttons">
+          <input type="button" id="seven" value="7" />
+          <input type="button" id="eight" value="8" />
+          <input type="button" id="nine" value="9" />
+          <input type="button" id="divide" value="/" /><br />
+          <input type="button" id="four" value="4" />
+          <input type="button" id="five" value="5" />
+          <input type="button" id="six" value="6" />
+          <input type="button" id="multi" value="*" /><br />
+          <input type="button" id="one" value="1" />
+          <input type="button" id="two" value="2" />
+          <input type="button" id="three" value="3" />
+          <input type="button" id="subs" value="-" /><br />
+          <input type="button" id="dot" value="." />
+          <input type="button" id="zero" value="0" />
+          <input type="button" id="add" value="+" />
+          <input type="button" id="clear" value="C" /><br />
+          <input type="button" id="equal" value="=" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Function to display value in the text box
+      function addToDisplay(value) {
+        document.calc.display.value += value;
+      }
+
+      // Function to clear the display
+      function clearDisplay() {
+        document.calc.display.value = "";
+      }
+
+      // Function to evaluate the expression
+      function calculate() {
+        try {
+          document.calc.display.value = eval(document.calc.display.value);
+        } catch (e) {
+          document.calc.display.value = "Error";
+        }
+      }
+
+      // Attaching event listeners to buttons
+      document.getElementById("seven").addEventListener("click", function () {
+        addToDisplay("7");
+      });
+
+      document.getElementById("eight").addEventListener("click", function () {
+        addToDisplay("8");
+      });
+
+      document.getElementById("nine").addEventListener("click", function () {
+        addToDisplay("9");
+      });
+
+      document.getElementById("divide").addEventListener("click", function () {
+        addToDisplay("/");
+      });
+
+      document.getElementById("four").addEventListener("click", function () {
+        addToDisplay("4");
+      });
+
+      document.getElementById("five").addEventListener("click", function () {
+        addToDisplay("5");
+      });
+
+      document.getElementById("six").addEventListener("click", function () {
+        addToDisplay("6");
+      });
+
+      document.getElementById("multi").addEventListener("click", function () {
+        addToDisplay("*");
+      });
+
+      document.getElementById("one").addEventListener("click", function () {
+        addToDisplay("1");
+      });
+
+      document.getElementById("two").addEventListener("click", function () {
+        addToDisplay("2");
+      });
+
+      document.getElementById("three").addEventListener("click", function () {
+        addToDisplay("3");
+      });
+
+      document.getElementById("subs").addEventListener("click", function () {
+        addToDisplay("-");
+      });
+
+      document.getElementById("dot").addEventListener("click", function () {
+        addToDisplay(".");
+      });
+
+      document.getElementById("zero").addEventListener("click", function () {
+        addToDisplay("0");
+      });
+
+      document.getElementById("add").addEventListener("click", function () {
+        addToDisplay("+");
+      });
+
+      document.getElementById("clear").addEventListener("click", function () {
+        clearDisplay();
+      });
+
+      document.getElementById("equal").addEventListener("click", function () {
+        calculate();
+      });
+    </script>
+  </body>
+</html>
